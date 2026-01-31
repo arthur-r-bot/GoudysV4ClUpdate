@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback | Goudy's French Cuisine</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                        },
+                        secondary: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans antialiased">
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+
+    <custom-navbar></custom-navbar>
+
+    <!-- Header -->
+    <section class="bg-gradient-to-b from-primary-50 to-stone-50 py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i data-feather="message-circle" class="w-8 h-8 text-primary-600"></i>
+            </div>
+            <h1 class="font-serif text-5xl md:text-6xl font-bold text-stone-900 mb-4">We Value Your Feedback</h1>
+            <p class="text-xl text-stone-600 max-w-2xl mx-auto">
+                Your experience matters to us. Help us perfect our shipping, packaging, and overall service.
+            </p>
+        </div>
+    </section>
+
+    <!-- Feedback Form -->
+    <section class="py-16 px-4">
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                <form id="feedback-form" class="space-y-6">
+                    <!-- Order Information -->
+                    <div class="border-b border-stone-200 pb-6">
+                        <h2 class="font-serif text-2xl font-bold text-stone-900 mb-6">Order Information</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="order-number" class="block text-sm font-medium text-stone-700 mb-2">
+                                    Order Number (Optional)
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="order-number" 
+                                    name="order-number"
+                                    placeholder="e.g., #12345"
+                                    class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                                >
+                            </div>
+                            <div>
+                                <label for="order-date" class="block text-sm font-medium text-stone-700 mb-2">
+                                    Order Date (Optional)
+                                </label>
+                                <input 
+                                    type="date" 
+                                    id="order-date" 
+                                    name="order-date"
+                                    class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="border-b border-stone-200 pb-6">
+                        <h2 class="font-serif text-2xl font-bold text-stone-900 mb-6">Contact Information</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-stone-700 mb-2">
+                                    Name <span class="text-red-500">*</span>
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name"
+                                    required
+                                    placeholder="Your name"
+                                    class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                                >
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-stone-700 mb-2">
+                                    Email <span class="text-red-500">*</span>
+                                </label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email"
+                                    required
+                                    placeholder="your@email.com"
+                                    class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rating Section -->
+                    <div class="border-b border-stone-200 pb-6">
+                        <h2 class="font-serif text-2xl font-bold text-stone-900 mb-6">How Did We Do?</h2>
+                        
+                        <!-- Product Quality -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-stone-700 mb-3">
+                                Product Quality <span class="text-red-500">*</span>
+                            </label>
+                            <div class="flex gap-2">
+                                <button type="button" class="rating-btn flex-1 px-4 py-3 border-2 border-stone-300 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all" data-rating="1" data-category="quality">
+                                    😞 Poor
+                                </button>
+                                <button type="button" class="rating-btn flex-1 px-4 py-3 border-2 border-stone-300 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all" data-rating="2" data-category="quality">
+                                    😐 Fair
+                                </button>
+                                <button type="button" class="rating-btn flex-1 px-4 py-3 border-2 border-stone-300 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all" data-rating="3" data-category="quality">
+                                    🙂 Good
+                                </button>
+                                <button type="button" class="rating-btn flex-1 px-4 py-3 border-2 border-stone-300 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all" data-rating="4" data-category="quality">
+                                    😊 Great
+                                </button>
+                                <button type="button" class="rating-btn flex-1 px-4 py-3 border-2 border-stone-300 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all" data-rating="5" data-category="quality">
+                                    🤩 Excellent
+                                </button>
+                            </div>
+                            <input type="hidden" name="quality-rating" id="quality-rating" required>
+                        </div>
+
+                        <!-- Packaging -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-stone-700 mb-3">
+                                Packaging & Presentation <span class="text-red-500">*</span>
+                            </label>
+                            <div class="flex gap-2">
+                                <button type="button" class="rating-btn flex-1 px-4 py-3 border-2 border-stone-300 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all" data-rating="1" data-category="packaging">
+                                    😞 Poor
+                                </button>
+                                <button type="button" class="rating-btn flex-1 px-4 py-3 border-2 border-stone-300 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all" data-rating="2" data-category="packaging">
+                                    😐 Fair
+                                </button>
+                                <button type="button" class="rating-btn flex-1 px-4 py-3 border-2 border-stone-300 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all" data-rating="3" data-category="packaging">
+                                    🙂 Good
+                                </button>
+                                <button type="button" class="rating-btn flex-1 px-4 py-3 border-2 border-stone-300 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all" data-rating="4" data-category="packaging">
+                                    😊 Great
+                                </button>
+                                <button type="button" class="rating-btn flex-1 px-4 py-3 border-2 border-stone-300 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all" data-rating="5" data-category="packaging">
+                                    🤩 Excellent
+                                </button>
+                            </div>
+                            <input type="hidden" name="packaging-rating" id="packaging-rating" required>
+                        </div>
+
+                        <!-- Shipping -->
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 mb-3">
+                                Shipping & Delivery <span class="text-red-500">*</span>
+                            </label>
+                            <div class="flex gap-2">
+                                <button type="button" class="rating-btn flex-1 px-4 py-3 border-2 border-stone-300 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all" data-rating="1" data-category="shipping">
+                                    😞 Poor
+                                </button>
+                                <button type="button" class="rating-btn flex-1 px-4 py-3 border-2 border-stone-300 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all" data-rating="2" data-category="shipping">
+                                    😐 Fair
+                                </button>
+                                <button type="button" class="rating-btn flex-1 px-4 py-3 border-2 border-stone-300 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all" data-rating="3" data-category="shipping">
+                                    🙂 Good
+                                </button>
+                                <button type="button" class="rating-btn flex-1 px-4 py-3 border-2 border-stone-300 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all" data-rating="4" data-category="shipping">
+                                    😊 Great
+                                </button>
+                                <button type="button" class="rating-btn flex-1 px-4 py-3 border-2 border-stone-300 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all" data-rating="5" data-category="shipping">
+                                    🤩 Excellent
+                                </button>
+                            </div>
+                            <input type="hidden" name="shipping-rating" id="shipping-rating" required>
+                        </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div>
+                        <label for="comments" class="block text-sm font-medium text-stone-700 mb-2">
+                            Additional Comments
+                        </label>
+                        <textarea 
+                            id="comments" 
+                            name="comments"
+                            rows="6"
+                            placeholder="Tell us more about your experience. What did we do well? What could we improve?"
+                            class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-none"
+                        ></textarea>
+                    </div>
+
+                    <!-- Would Recommend -->
+                    <div class="bg-stone-50 rounded-lg p-6">
+                        <label class="flex items-center cursor-pointer">
+                            <input 
+                                type="checkbox" 
+                                name="recommend"
+                                class="w-5 h-5 text-primary-600 border-stone-300 rounded focus:ring-primary-500"
+                            >
+                            <span class="ml-3 text-stone-700 font-medium">
+                                I would recommend Goudy's to friends and family
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-4">
+                        <button 
+                            type="submit"
+                            class="w-full bg-primary-600 hover:bg-primary-700 text-white py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-[1.02] shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                        >
+                            <i data-feather="send" class="w-5 h-5"></i>
+                            <span>Submit Feedback</span>
+                        </button>
+                        <p class="text-center text-sm text-stone-500 mt-4">
+                            Thank you for helping us improve! Your feedback is invaluable.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Feedback Matters -->
+    <section class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="font-serif text-3xl font-bold text-stone-900 text-center mb-12">
+                Why Your Feedback Matters
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="package" class="w-8 h-8 text-primary-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-stone-900 mb-2">Better Packaging</h3>
+                    <p class="text-stone-600 text-sm">
+                        Your insights help us improve how we protect and present your boards during shipping.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="truck" class="w-8 h-8 text-primary-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-stone-900 mb-2">Faster Delivery</h3>
+                    <p class="text-stone-600 text-sm">
+                        We use your shipping feedback to optimize our logistics and get boards to you fresher.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="star" class="w-8 h-8 text-primary-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-stone-900 mb-2">Premium Quality</h3>
+                    <p class="text-stone-600 text-sm">
+                        Your product feedback guides our sourcing decisions and quality standards.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <custom-footer></custom-footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Rating button functionality
+        document.querySelectorAll('.rating-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const category = this.dataset.category;
+                const rating = this.dataset.rating;
+                
+                // Remove active class from siblings
+                const siblings = this.parentElement.querySelectorAll('.rating-btn');
+                siblings.forEach(sibling => {
+                    sibling.classList.remove('border-primary-600', 'bg-primary-100', 'font-semibold');
+                    sibling.classList.add('border-stone-300');
+                });
+                
+                // Add active class to clicked button
+                this.classList.remove('border-stone-300');
+                this.classList.add('border-primary-600', 'bg-primary-100', 'font-semibold');
+                
+                // Set hidden input value
+                document.getElementById(`${category}-rating`).value = rating;
+            });
+        });
+
+        // Initialize feather icons
+        feather.replace();
+    </script>
+</body>
+</html>
